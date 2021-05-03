@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <h1>home</h1>
+  <div class="home container mt-5">
+    <h1>Home</h1>
 
   </div>
 </template>
