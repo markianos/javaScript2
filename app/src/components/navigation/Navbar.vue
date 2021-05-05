@@ -42,6 +42,8 @@
               data-mdb-toggle="dropdown"
               aria-expanded="false">
               <i class="fas fa-shopping-cart"></i>
+                <span class="badge rounded-pill badge-notification bg-danger">1</span>
+
             </a>
             <ul
               class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
@@ -59,8 +61,9 @@
               aria-expanded="false"
             >
               <i class="fas fa-user"></i>
+              
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
               USER SETTINGS
             </ul>
           </li>
