@@ -8,7 +8,7 @@
             "price": 5990,
             "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/dator-surfplatta/laptop/laptop-14-16-tum/hp-14s-fq0053no(1016373)_421764_1_Normal_Large.webp"
 
-        }
+        },
         {
             "id": 2,
             "name": "MacBook Pro",
@@ -17,7 +17,7 @@
             "price": 28990,
             "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/dator-surfplatta/laptop/laptop-14-16-tum/apple-macbook-pro-16-touch-bar-1tb-space-grey-mvvk2ksa(1010768)_366871_3_Normal_Large.webp"
 
-        }
+        },
         {
             "id": 3,
             "name": "DJI Mini 2 Fly More Combo",
@@ -25,7 +25,7 @@
             "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
             "price": 6690,
             "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/hem-hushall/leksaker-hobby/dronare/dji-mini-2-fly-more-combo(1015595)_404343_1_Normal_Large.webp"
-        }
+        },
         {
             "id": 4,
             "name": "Segway Ninebot",
@@ -33,7 +33,7 @@
             "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
             "price": 7990,
             "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/hem-hushall/elfordon/elscooter/segway-ninebot-by-segway-max-g30d(1016844)_416178_1_Normal_Large.webp"
-        }
+        },
         {
             "id": 5,
             "name": "Asus RT-AX82U",
