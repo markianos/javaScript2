@@ -28,11 +28,19 @@
         }
         {
             "id": 4,
-            "name": "Segway Ninebot ",
+            "name": "Segway Ninebot",
             "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
             "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
             "price": 7990,
             "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/hem-hushall/elfordon/elscooter/segway-ninebot-by-segway-max-g30d(1016844)_416178_1_Normal_Large.webp"
+        }
+        {
+            "id": 5,
+            "name": "Asus RT-AX82U",
+            "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
+            "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
+            "price": 1990,
+            "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/dator-surfplatta/natverk/router/asus-rt-ax82u(1014736)_399533_3_Normal_Large.webp"
         }
     ]
 }
