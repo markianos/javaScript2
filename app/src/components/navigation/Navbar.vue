@@ -31,26 +31,37 @@
             >
           </li>
         </ul>
-
-        <ul class="navbar-nav">
-          <!-- Dropdown -->
+        <!-- Dropdown icon menu start -->
+        <ul class="navbar-nav ms-auto">
+          <!-- shopping cart -->
           <li class="nav-item dropdown">
             <a
-              class="nav-link dropdown-toggle"
+              class="nav-link" href="#" 
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
+            <ul
+              class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              SHOPPING CART
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link"
               href="#"
               id="navbarDropdownMenuLink"
               role="button"
               data-mdb-toggle="dropdown"
               aria-expanded="false"
             >
-              Dropdown link
+              <i class="fas fa-user"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
+              USER SETTINGS
             </ul>
           </li>
         </ul>
