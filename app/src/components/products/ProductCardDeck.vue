@@ -1,5 +1,5 @@
 <template>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">  <!-- här kommer mina produkter läggar i denna layout  33:58 lekt. 12 -->
    <h1>products</h1>
   </div>
 </template>
