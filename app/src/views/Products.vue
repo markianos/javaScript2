@@ -1,12 +1,12 @@
 <template>
-    <ProductCardDeck />
+    <ProductCardDeck /> <!-- här lägger vi in vår component ProductCardDeck i vår html-template-->
 </template>
 
 <script>
-import ProductCardDeck from '../components/products/ProductCardDeck'
+import ProductCardDeck from '../components/products/ProductCardDeck' // importerar vår component
 import { mapActions } from 'vuex' // importerar mapActions från Vuex
 export default {
-    components: {
+    components: { // definierar vår component
         ProductCardDeck
     },
     methods: {
