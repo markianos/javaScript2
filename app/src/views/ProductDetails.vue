@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- details {{ id }}  lägger till id på vår sida i html template-->
-        <div v-if="product" class="container my-5 py-5"> <!-- en v-if för "product" som förhindrar våra felmeddelanden från cleanup när null redan finns 1:46 lektion 12 -->
+        <div v-if="product" class="container my-5 py-5"> <!-- en v-if för "product" som förhindrar att det skrivs ut och blir felmeddelanden från cleanup när null redan finns 1:46 lektion 12 -->
             
             <section class="text-center">
                 <h3 class="mb-5 font-weight-bold">Product Details</h3>
@@ -30,6 +30,12 @@
                 </div>
 
             </section>
+
+        </div>
+
+        <div v-else>
+            <h3>Loading...</h3>
+             
         </div>
     </div>
 </template>
@@ -40,7 +46,7 @@ export default {
     name: 'ProductDetails',
     props: ['id'], // skickar med vårt id
     methods: { // kör funktionen när productDetails laddas
-        ...mapActions (['getOneProduct']) //  hämtar getOneProduct
+        ...mapActions (['getOneProduct', 'cleanup']) //  hämtar getOneProduct och cleanup funktioner
     },
     computed: {
         ...mapGetters(['product']) // hämtar funktionen
@@ -49,7 +55,7 @@ export default {
         this.getOneProduct(this.id) // vi skickar in vårt id
     },
     destroyed() {
-        this.Cleanup() // kör vår cleanup och ställer tillbaka till null
+        this.cleanup() // kör vår cleanup och ställer tillbaka till null
     }
 }
 </script> 

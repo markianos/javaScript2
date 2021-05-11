@@ -18,7 +18,7 @@ export default {  // exporterar ett default objekt som innehåller ett state, ge
         SET_PRODUCT: (state, product) => { // får till gång till vår state och en product
             state.product = product
         },
-        CLEANUP: state => {  // kör vår clean up som återställer till null
+        CLEANUP: state => {  // kör vår cleanup som återställer till null
             state.product = null 
         }
     },
