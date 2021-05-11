@@ -6,7 +6,8 @@
               <h5 class="card-title mt-2">{{ product.name }}</h5>
               <p class="card-text">{{ product.short }}</p>
 
-              <router-link to="/" type="button" class="btn btn-primary">Show Product</router-link>
+              <router-link :to="{ name: 'ProductDetails', params: { id: product.id}}" type="button" class="btn btn-primary">Show Product</router-link>
+                    <!-- vi bindar vår knapps router-link till namnet på componenten, "ProductDetails" med params av product.id  1:20 lektion 12 --> 
           </div>
       </div>
   </div>

@@ -21,7 +21,8 @@ const routes = [
   {
   path: '/product/details/:id',
   name: 'ProductDetails',
-  component: ProductDetails
+  component: ProductDetails,
+  props: true // låter product.id tas emot som en prop istället för att lägga till $...
   },
   {
     path: '/about',
