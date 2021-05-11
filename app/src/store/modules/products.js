@@ -17,6 +17,9 @@ export default {  // exporterar ett default objekt som innehåller ett state, ge
         },
         SET_PRODUCT: (state, product) => { // får till gång till vår state och en product
             state.product = product
+        },
+        CLEANUP: state => {  // kör vår clean up som återställer till null
+            state.product = null 
         }
     },
     actions: {          // här hämtar vi våra produkter genom en async när komponenten laddas
@@ -27,6 +30,9 @@ export default {  // exporterar ett default objekt som innehåller ett state, ge
         getOneProduct: async ({commit}, id) => { // skapar en "get one product" function som är async // 1:22 lektion 12 
             const res = await axios.get('http://localhost:3000/products/' + id) // vi sparar vår respons som en get mot våra producter + id för att välja specifik produkt
             commit('SET_PRODUCT', res.data) // När vi fått vårt respons gör vi en commit till SET_PRODUCT och skickar med vår res.data som är ett objekt med en produkt
+        },
+        cleanup: ({commit}) => { // vi skapar en cleanup funktion som commitar CLEANUP
+            commit('CLEANUP')
         }
     }
 } 

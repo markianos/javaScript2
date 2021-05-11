@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- details {{ id }}  lägger till id på vår sida i html template-->
-        <div class="container my-5 py-5">
+        <div v-if="product" class="container my-5 py-5"> <!-- en v-if för "product" som förhindrar våra felmeddelanden från cleanup när null redan finns-->
             
             <section class="text-center">
                 <h3 class="mb-5 font-weight-bold">Product Details</h3>
@@ -47,6 +47,9 @@ export default {
     },
     created() {
         this.getOneProduct(this.id) // vi skickar in vårt id
+    },
+    destroyed() {
+        this.Cleanup() // kör vår cleanup och ställer tillbaka till null
     }
 }
 </script> 
