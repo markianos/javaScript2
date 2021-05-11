@@ -15,7 +15,7 @@
             "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
             "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
             "price": 28990,
-            "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/dator-surfplatta/laptop/laptop-14-16-tum/apple-macbook-pro-16-touch-bar-1tb-space-grey-mvvk2ksa(1010768)_366871_3_Normal_Large.webp"
+            "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/dator-surfplatta/laptop/laptop-10-13-tum/apple-macbook-air-512gb-apple-m1-chip-with-8-core-cpu-and-8-core-gpu-silver(1015646)_405187_2_Normal_Large.webp"
 
         },
         {
@@ -41,6 +41,14 @@
             "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
             "price": 1990,
             "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/dator-surfplatta/natverk/router/asus-rt-ax82u(1014736)_399533_3_Normal_Large.webp"
+        },
+        {
+            "id": 6,
+            "name": "Apple Airpods pro",
+            "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
+            "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, impedit.",
+            "price": 2290,
+            "image": "https://www.netonnet.se/GetFile/ProductImagePrimary/ljud-bild/horlurar/truewireless/apple-airpods-pro-white(1010590)_364333_13_Normal_Large.webp"
         }
     ]
 }
