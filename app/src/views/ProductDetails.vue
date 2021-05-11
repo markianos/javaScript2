@@ -33,7 +33,7 @@
 
         </div>
 
-        <div v-else>
+        <div v-else> <!-- om product inte lästs in så visas loading-->
             <h3>Loading...</h3>
              
         </div>
