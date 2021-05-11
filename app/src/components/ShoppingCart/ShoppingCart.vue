@@ -13,7 +13,7 @@
     <div class="p-2 d-flex justify-content-between align-items-center">
       <div>
         <div class="total-price">
-          Total: <span>1000 SEK</span>
+          Total: <span>{{ shoppingCartTotal }}:-</span>
         </div>
           <small class="text-muted">inkl. moms</small>
       </div>
@@ -34,7 +34,7 @@ export default {
     ShoppingCartProduct
   },
   computed: {
-    ...mapGetters(['shoppingCart']) // hämtar vår shoppingCart
+    ...mapGetters(['shoppingCart', 'shoppingCartTotal']) // hämtar vår shoppingCart & shoppingCartTotal som vi skapade i cart.js
   }
 }
 </script>
