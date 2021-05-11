@@ -22,7 +22,7 @@
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <h3 class="text-danger">{{ product.price }}:-</h3>
-                            <button class=" btn btn-primary btn-sm">Add to Cart</button>
+                            <button class=" btn btn-primary" @click="addProductToCart({ product, quantity })" >Add to Cart</button> <!-- om vi hade haft +/-2:24 lektion 12-->
                         </div>
                         
                     </div>
@@ -45,8 +45,13 @@ import { mapActions, mapGetters } from 'vuex' // importerar från vuex (skapades
 export default {
     name: 'ProductDetails',
     props: ['id'], // skickar med vårt id
+    data() {
+        return {
+            quantity: 1
+    }
+    },
     methods: { // kör funktionen när productDetails laddas
-        ...mapActions (['getOneProduct', 'cleanup']) //  hämtar getOneProduct och cleanup funktioner
+        ...mapActions (['getOneProduct', 'cleanup', 'addProductToCart']) //  hämtar getOneProduct och cleanup funktioner
     },
     computed: {
         ...mapGetters(['product']) // hämtar funktionen

@@ -42,7 +42,7 @@
               data-mdb-toggle="dropdown"
               aria-expanded="false">
               <i class="fas fa-shopping-cart"></i>
-                <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                <span class="badge rounded-pill badge-notification bg-danger">{{ cartItemCount }}</span>
 
             </a>
             <ul class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdownMenuLink">
@@ -73,11 +73,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import ShoppingCart from '../ShoppingCart/ShoppingCart'
 export default {
   name: 'Navbar',
   components: {
     ShoppingCart
+  },
+  computed: {
+    ...mapGetters(['cartItemCount'])
   }
 };
 </script>
