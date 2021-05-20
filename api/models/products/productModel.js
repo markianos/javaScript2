@@ -159,4 +159,47 @@ exports.updateProduct = (req, res) => {  // funktion för att uppdatera vår pro
       }
     })
   }
+
+
+
+
+// ------------------ UPDATE PRODUCT
+
+exports.deleteProduct = (req, res) => { // funktion för att ta bort product
+
+    Product.exists({ _id: req.params.id }, (err, result) => { // letar efter om produkten med sökt id existerar
+      if(err) {         // om vi inte får ett resultat utan ett fel så skickar vi med ett 400
+        return res.status(400).json({
+          statusCode: 400,
+          status: false,
+          message: 'You managed to make a bad request'
+        })
+      }
+      if(result) {      // om vi får ett resultat
+        Product.deleteOne({ _id: req.params.id }) // hittar produkt via id och använder metoden deleteOne
+          .then(() => {  
+            res.status(200).json({ // om vi lyckas  så skickar vi ett 200 och ett meddelande
+              statusCode: 200,
+              status: true,
+              message: 'Product was sucessfully deleted and is now gone '
+            })
+          })
+          .catch(err => {  // om vi får resultat men något gick fel och vi inte kunde utföra en delete
+            res.status(500).json({ // vi skickar ett 500 med meddelande
+              statusCode: 500,
+              status: false,
+              message: 'Failed to delete product, the force is strong with this one ',
+              err
+            })
+          })
+      } 
+      else {
+        res.status(404).json({ // om vi inte får tillbaka en produkt dvs. fins ej så skickar vi en 404 med meddelande
+          statusCode: 404,
+          status: false,
+          message: err || 'Oooh nooo, this product does not exist'
+        })
+      }
+    })
+  }
   
