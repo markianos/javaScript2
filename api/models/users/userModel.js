@@ -1,6 +1,7 @@
 const mongodb = require('mongoose');
 const User = require('../users/userSchema');
 const bcrypt = require('bcrypt');
+const auth = require('../../authentication/auth');
 
 // FUNKTIONER
 
@@ -62,3 +63,46 @@ exports.registerUser = (req, res) => {
       })
     })
   }
+
+  
+  
+  //--------- LOGIN USER
+
+exports.loginUser = (req, res) => {
+
+    User.findOne({ email: req.body.email }) // Söker efter email för findOne
+      .then(user => {
+        if(!user) { // om user inte har email så är den null och finns inte
+          return res.status(404).json({ // skickar 404 i json
+            statusCode: 404,
+            status: false,
+            message: 'Incorrect email or password, did you misspell?'
+          })
+        }
+  
+        bcrypt.compare(req.body.password, user.passwordHash, (err, result) => { //vi använder bcrypt och compare för att jämföra användarens password som skickas  med user passwordHash
+        if(err) { // om vi får error skickar vi respons med json på 400
+            return res.status(400).json({
+              statusCode: 400,
+              status: false,
+              message: 'You made a bad request',
+              err
+            })
+        }
+        if(result) { // om det gick bra så skickar vi status på 200 med ett json objekt
+            res.status(200).json({
+              statusCode: 200,
+              status: true,
+              message: 'Authentication was happily successful',
+              token: auth.generateToken(user) //  vår token som vi la in i auth.js med jwt och SECRET_KEY som finns i vår .env
+            })
+        } else {
+            res.status(401).json({ // vår request lyckades men stämde inte
+              statusCode: 401,
+              status: false,
+              message: 'Incorrect email or password'
+          })
+        }
+      })
+    })
+}
