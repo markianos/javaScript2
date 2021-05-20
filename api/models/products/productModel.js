@@ -37,13 +37,54 @@ exports.getProduct = (req, res) => {
                 status: false,
                 message: err.message
               }))
-          } else {      // annars om produkt inte existerar skickas en 404 med err medelande eller vårt meddelande
+        } else {      // annars om produkt inte existerar skickas en 404 med err medelande eller vårt meddelande
             res.status(404).json({
               statusCode: 404,
               status: false,
               message: err || 'Oops, this products does not exist' // felmeddelande
             })
-          }
-        })
-      }
-      
+        }
+    })
+}
+
+
+exports.createProduct = (req, res) => {
+    Product.exists({ name: req.body.name }, (err, result) => { // söker i vår databas efter namn och kollar i body om samma namn finns redan
+        if(err) {
+            return res.status(500).json(err);
+        }
+        if(result) { // om vi får ett resultat och produkten redan existerade så...
+            return res.status(400).json({
+                statusCode: 400,
+                status: false,
+                message: 'No no no, that was a nad request. The product already exists in this universe, update the product instead'
+            })
+        }
+
+        const newProduct = new Product ({ // skapar newProduct som är en ny instans av Product och som följer strukteren i vårt productSchema
+            name:   req.body.name,      // skapar efter vårt schema och hämtar in från body.name,short osv. 
+            short:  req.body.short,
+            desc:   req.body.desc,
+            price:  req.body.price,
+            image:  req.body.image
+
+        }) 
+
+        newProduct.save() // vi gör en save metod och sparar till databasen 
+            .then(() => {  // vi kollar så det går bra och skickar en respons på 201 som nedan
+                res.status(201).json({
+                    statusCode: 201,
+                    status: true,
+                    message: 'the new product was created with success'
+                })
+            })
+            .catch(err => { // om vi inte kunde spara till databasen skickar vi felmmeddelande med status på 500 
+                res.status(500).json({
+                    statusCode: 500,
+                    status: false,
+                    message: err  || 'Something went wrong, the product was not created'
+                })
+            })
+
+    }) 
+}      
