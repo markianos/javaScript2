@@ -4,6 +4,13 @@ const mongodb = require('mongoose');
 const productSchema = require('./productSchema');
 const Product = require('./productSchema'); // vårt Schema med stor inlednande bokstav
 
+
+
+
+
+// ---------------- GET ALL PRODUCTS 
+
+
 exports.getProducts = (req, res) => {  // en funktion som hämtar alla våra produkter med ett request och respons
     Product.find({}, (err, data) => {  // här lämnar vi option tom och får tillbaka alla
          if(err) {                      // om fel så skickar vi respons med status på 500 som json
@@ -18,6 +25,11 @@ exports.getProducts = (req, res) => {  // en funktion som hämtar alla våra pro
 
  })
 }
+
+
+
+
+// ---------------- GET PRODUCTS BY ID 
 
 exports.getProduct = (req, res) => { 
     Product.exists({ _id: req.params.id }, (err, result) => {  //söker efter _id i mongodb och filtrerar efter den request vi sökt på och om den existerar
@@ -47,6 +59,10 @@ exports.getProduct = (req, res) => {
     })
 }
 
+
+
+
+// ---------------- CREATE NEW PRODUCT 
 
 exports.createProduct = (req, res) => {
     Product.exists({ name: req.body.name }, (err, result) => { // söker i vår databas efter namn och kollar i body om samma namn finns redan
@@ -88,3 +104,59 @@ exports.createProduct = (req, res) => {
 
     }) 
 }      
+
+
+
+
+
+// ------------------ UPDATE PRODUCT
+
+exports.updateProduct = (req, res) => {  // funktion för att uppdatera vår produkt
+    Product.exists({ _id: req.params.id }, (err, result) => { // söker efter id och jämför med vår id parameter
+      if(err) {
+        return res.status(400).json({       // om vi får tillbaka ett bad request
+          statusCode: 400,
+          status: false,
+          message: 'No no no, that was a nad request.'
+        })
+      }
+  
+      if(result) {  
+        Product.updateOne({ _id: req.params.id }, {  // filtrerar och uppdaterar det id som vi sökt efter
+          ...req.body,  // vi gör en spread så alla våra delar i objektet hamnar efter varandra 
+          modified: Date.now() // eftersom att vi har en modified del så vill vi att info om när den uppdaterades/modifierades skickas med
+        })
+        .then(() => { // om det är lyckat skickar vi med en 200
+          res.status(200).json({
+            statusCode: 200,
+            status: true,
+            message: 'The product was happy and updated itself successfully'
+          })
+        })
+        .catch((err) => { // en catch om något går fel 
+          if(err.code === 11000) { //en dublicate key error 
+            return res.status(400).json({
+              statusCode: 400,
+              status: false,
+              message: 'A product by that name already exixst and is not willing to share the name',
+              err
+            })
+          }
+          res.status(500).json({ // felmeddelande 500 
+            statusCode: 500,
+            status: false,
+            message: 'Failed to update product',
+            err
+          })
+        })
+      } 
+      else {
+        res.status(404).json({
+          statusCode: 404,
+          status: false,
+        message: err || 'Oops, this product does not exist'
+        })
+      }
+    })
+  }
+  
