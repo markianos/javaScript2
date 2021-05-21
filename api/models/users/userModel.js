@@ -1,7 +1,7 @@
-const mongodb = require('mongoose');
-const User = require('../users/userSchema');
-const bcrypt = require('bcrypt');
-const auth = require('../../authentication/auth');
+const mongodb = require('mongoose'); // hämtar in mongoose
+const User = require('../users/userSchema'); // hämtar in userSchema
+const bcrypt = require('bcrypt'); // hämtar in bcrypt
+const auth = require('../../authentication/auth'); //hämtar in filen auth
 
 // FUNKTIONER
 
@@ -64,7 +64,6 @@ exports.registerUser = (req, res) => {
     })
   }
 
-  
   
   //--------- LOGIN USER
 
