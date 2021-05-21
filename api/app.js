@@ -6,7 +6,7 @@ const cors = require('cors'); // hämtar in cors
 const productController = require('./controllers/productController'); // importerar router
 const userController = require('./controllers/userController');
 
-//MIDDLEWARE
+//ROUTES / MIDDLEWARE
 
 app.use(cors()); // använder cors som middleware 
 app.use(express.urlencoded({extended: false}));

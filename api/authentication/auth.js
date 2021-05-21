@@ -12,7 +12,7 @@ exports.generateToken = user => {
   exports.verifyToken = (req, res, next) => { // en veryfyToken som arrowfunction med en middleware/next
 
     try {
-        const token = req.header.authorization.split(" ")[1] // Token skickas som Bearer <token> därför använder vi split och sparar vår array på indexplats[1] för att bara få token delen och inte bearer
+        const token = req.headers.authorization.split(" ")[1] // Token skickas som Bearer <token> därför använder vi split och sparar vår array på indexplats[1] för att bara få token delen och inte bearer
         req.userData = jwt.verify(token, secretKey) // verifierar vår token och secret key och om vi lyckas så går vi till next annars hoppar vi ur till catch
         next();
     }

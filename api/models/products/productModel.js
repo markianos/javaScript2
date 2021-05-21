@@ -181,7 +181,7 @@ exports.deleteProduct = (req, res) => { // funktion för att ta bort product
             res.status(200).json({ // om vi lyckas  så skickar vi ett 200 och ett meddelande
               statusCode: 200,
               status: true,
-              message: 'Product was sucessfully deleted and is now gone '
+              message: 'Product was sucessfully deleted and is now but a memory in the distant '
             })
           })
           .catch(err => {  // om vi får resultat men något gick fel och vi inte kunde utföra en delete
