@@ -5,6 +5,7 @@ import Products from '../views/Products.vue'
 import ProductDetails from '../views/ProductDetails.vue'
 
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,7 +23,7 @@ const routes = [
   path: '/product/details/:id',
   name: 'ProductDetails',
   component: ProductDetails,
-  props: true // låter product.id tas emot som en prop istället för att lägga till $...
+  props: true // låter product.id tas emot som en props istället för att lägga till $...
   },
   {
     path: '/about',
