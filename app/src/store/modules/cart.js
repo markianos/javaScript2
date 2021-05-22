@@ -25,7 +25,7 @@ export default {
     },
     mutations: {
         ADD_TO_CART: (state, { product, quantity }) => {
-            let exists = state.cart.find(item => item.product.id === product.id) // deklarerar variabeln exits som letar i vår cart om product med samma id finns
+            let exists = state.cart.find(item => item.product._id === product._id) // deklarerar variabeln exits som letar i vår cart om product med samma id finns
             if(exists) { // OM exists så...
                 exists.quantity += quantity // lägger till det vi skickar in på redan befintlig quantity
                 return

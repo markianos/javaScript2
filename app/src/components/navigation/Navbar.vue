@@ -50,23 +50,30 @@
             </ul>
           </li>
 
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="fas fa-user"></i>
-              
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-              USER SETTINGS
-            </ul>
-          </li>
-        </ul>
+<li class="nav-item dropdown" v-if="loggedIn">
+              <a
+                class="nav-link dropdown"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-user"></i>
+              </a>
+              <!-- Dropdown menu -->
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li class="nav-item">
+                  <router-link class="nav-link text-dark" aria-current="page" to="/user">Settings</router-link>
+                </li>
+              </ul>
+            </li>
+
+            <li v-if="!loggedIn">
+              <router-link class="nav-link" to="/Login">Login</router-link>
+            </li>
+
+          </ul>
       </div>
     </div>
   </nav>
