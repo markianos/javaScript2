@@ -88,7 +88,8 @@ export default {
     ShoppingCart
   },
   computed: {
-    ...mapGetters(['cartItemCount'])
+    ...mapGetters(['cartItemCount']),
+    ...mapGetters(['loggedIn'])
   }
 };
 </script>

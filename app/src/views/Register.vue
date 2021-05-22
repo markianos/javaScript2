@@ -1,50 +1,38 @@
 <template>
 
-<div class="container w-50 text-center">
+<div class="container col-6 mx-auto ">
 <h2 class="mb-5">Register as a free member here...</h2>
 
-<form>
+<form class=""  @submit.prevent="onSub">
   <!-- 2 column grid layout with text inputs for the first and last names -->
   <div class="row mb-4">
     <div class="col">
       <div class=" ">
-        <input type="text" id="form3Example1" class="form-control" />
-        <label class="form-label" for="form3Example1">First name</label>
+        <input type="text" id="fistName" class="form-control" v-model="user.firstName" />
+        <label class="form-label" for="firstName">First name</label>
       </div>
     </div>
     <div class="col">
       <div class=" ">
-        <input type="text" id="form3Example2" class="form-control" />
-        <label class="form-label" for="form3Example2">Last name</label>
+        <input type="text" id="lastName" class="form-control" v-model="user.lastName" />
+        <label class="form-label" for="lastName">Last name</label>
       </div>
     </div>
   </div>
 
   <!-- Email input -->
   <div class="  mb-4">
-    <input type="email" id="form3Example3" class="form-control" />
-    <label class="form-label" for="form3Example3">Email address</label>
+    <input type="email" id="email" class="form-control" v-model="user.email" />
+    <label class="form-label" for="email">Email address</label>
   </div>
 
   <!-- Password input -->
   <div class="  mb-4">
-    <input type="password" id="form3Example4" class="form-control" />
-    <label class="form-label" for="form3Example4">Password</label>
+    <input type="password" id="password" class="form-control" v-model="user.password" />
+    <label class="form-label" for="password">Password</label>
   </div>
 
-  <!-- Checkbox -->
-  <div class="form-check d-flex justify-content-center mb-4">
-    <input
-      class="form-check-input me-2"
-      type="checkbox"
-      value=""
-      id="form2Example3"
-      checked
-    />
-    <label class="form-check-label" for="form2Example3">
-      Subscribe to our newsletter
-    </label>
-  </div>
+
 
   <!-- Submit button -->
   <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
@@ -73,8 +61,26 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-
+    data() {
+        return {
+            user: {         // skapar ett objekt med firstName mm att skicka med. 
+                firstName: '',
+                lastName: '',
+                email: '',
+                password: ''
+            } 
+        }
+    },
+    methods: {
+        ...mapActions(['register']),
+        onSub() {
+            if(this.user.firstName !== '' && this.user.lastName !== '' && this.user.email !== '' && this.user.password !== '') {
+                this.register(this.user)
+            }
+        }
+    }
 }
 </script>
 

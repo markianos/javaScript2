@@ -17,7 +17,7 @@
         </div>
           <small class="text-muted">inkl. moms</small>
       </div>
-      <button class="btn btn-primary">Gå till kassan</button>
+      <button class="btn btn-primary" @click.stop="">Gå till kassan</button>
     </div>
 
 
