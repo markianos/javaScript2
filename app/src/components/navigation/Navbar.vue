@@ -30,7 +30,7 @@
               >About</router-link>
           </li>
           <li class="nav-item">
-            <a class=" text-success nav-link active" href="http://www.pricerunner.com">Compare</a>
+            <a class=" text-success nav-link active" href="http://www.pricerunner.com" target="blank">Compare</a>
           </li>
         </ul>
         <!-- Dropdown icon menu start -->

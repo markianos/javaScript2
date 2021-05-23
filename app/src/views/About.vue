@@ -6,7 +6,7 @@
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-lg-6">
                         <div class="about-text go-to">
-                            <h3 class="dark-color"><i class="fab fa-digital-ocean"></i>                        Welcome to DigiWare</h3>
+                            <h3 class="dark-color"><i class="fab fa-digital-ocean"></i> Welcome to DigiWare</h3>
                             <h6 class="theme-color lead mb-4">The leading digitech retailer, since 2015</h6>
                             <p><mark>We don't design and develop our own brands </mark>  but we work with the best brands in the buisness. For us a state of the art brand is something we... Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, natus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime voluptatem, illo magni perspiciatis accusamus fugit?
                             </p>
