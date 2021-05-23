@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <router-link class="navbar-brand" to="/">
         <i class="fab fa-digital-ocean me-2"></i>DigiWare

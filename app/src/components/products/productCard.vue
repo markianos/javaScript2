@@ -1,7 +1,7 @@
 <template>
   <div class="col">
       <div class="card p-3">
-          <img :src="product.image" alt="..." class="card-img-top">
+          <img :src="product.image" alt="..." class="card-img-top w-50 align-self-center">
           <div class="card-body">
               <h5 class="card-title mt-2">{{ product.name }}</h5>
               <p class="card-text">{{ product.short }}</p>

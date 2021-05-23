@@ -1,7 +1,6 @@
 <template>
-  <div class="home container mt-5">
-    <h1>About us!</h1>
-    
+  <div class="home mt-5">
+    <h1>about</h1>
 
   </div>
 </template>

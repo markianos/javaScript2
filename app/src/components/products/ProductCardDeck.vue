@@ -1,5 +1,5 @@
 <template>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">  <!-- här kommer mina produkter läggar i denna layout  33:58 lekt. 12 -->
+  <div class="row mt-5 p-5 row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">  <!-- här kommer mina produkter läggar i denna layout  33:58 lekt. 12 -->
    <ProductCard v-for="product in products" :key="product.id" :product="product"  /> <!-- lägger till ProductCard som komponent inuti vår HTML-template-->
   </div>
 </template>

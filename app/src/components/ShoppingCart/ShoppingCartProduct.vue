@@ -13,10 +13,10 @@
         <div>
 
             <div class="btn-group btn-group-sm me-2" role="group">
-                <button class="btn btn-dark" @click.stop="">-</button> <!-- lägger till @click.stop som stoppar click eventets propagation -->               
-                <button class="btn btn-dark" @click.stop="">+</button>
+                <button class="btn btn-dark" @click.stop="item.quantity > 1 ? item.quantity-- : item.quantity">-</button> <!-- lägger till @click.stop som stoppar click eventets propagation -->               
+                <button class="btn btn-dark" @click.stop="addOneProduct({ product: item.product, quantity })">+</button>
             </div>
-            <button class="btn btn-danger btn-sm" @click.stop=""><i class="far fa-trash-alt"></i></button>            
+            <button class="btn btn-danger btn-sm" @click.stop="deleteProduct"><i class="far fa-trash-alt"></i></button>            
         </div>
 
 
@@ -26,9 +26,19 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
-    props: ['item']
-}
+    props: ['item'],
+    data() {
+    return {
+      quantity: 1,
+    };
+  },
+        methods: {
+            ...mapActions ([ 'deleteProduct', 'addOneProduct' ])
+            
+        }
+    }
 </script>
 
 <style>

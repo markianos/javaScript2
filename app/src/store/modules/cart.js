@@ -32,11 +32,35 @@ export default {
             }
 
             state.cart.push({ product, quantity }) // om inte produkt redan finns så skicka in product och antal
-        }
+        },
+        DELETE_PRODUCT: (state, product) => {
+            state.cart.splice(state.cart.indexOf(product), 1)
+        },
+        ADD_ONE_PRODUCT: (state, { product, quantity }) => {
+            let exists = state.cart.find((item) => item.product._id === product._id);
+            if (exists) {
+              exists.quantity += quantity;
+              return;
+            }
+            state.cart.push({ product, quantity });
+          },
+        REMOVE_ONE_PRODUCT: (state, product) => {
+            let exists = state.cart.find((item) => item.product._id === product._id);
+            exists.quantity -= 1;
+            return;
+        },
     },
     actions: {
         addProductToCart: ({commit}, { product, quantity }) => {  // skapar en funktion för att hämta produkt till kundkorg, där vi commitar product och antal
             commit('ADD_TO_CART', { product, quantity }) // vår commit med product och antal
+        },
+        deleteProduct: ({commit}, product) => {
+            commit('DELETE_PRODUCT', product)
+        },
+        addOneProduct: ({ commit }, { product, quantity }) => {
+            let item = { product, quantity: Number(quantity)};
+            commit('ADD_ONE_PRODUCT', item)
         }
+        
     }
 }
