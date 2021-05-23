@@ -27,8 +27,10 @@
           </li>
           <li class="nav-item">
             <router-link class="nav-link active" to="/about"
-              >About us</router-link
-            >
+              >About</router-link>
+          </li>
+          <li class="nav-item">
+            <a class=" text-success nav-link active" href="http://www.pricerunner.com">Compare</a>
           </li>
         </ul>
         <!-- Dropdown icon menu start -->
@@ -41,7 +43,7 @@
               role="button"
               data-mdb-toggle="dropdown"
               aria-expanded="false">
-              <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-shopping-cart"></i> <!-- visar vår kundvagn och vår badge som ökar med antal varor-->
                 <span v-show="cartItemCount" class="badge rounded-pill badge-notification bg-danger">{{ cartItemCount }}</span>
 
             </a>
@@ -50,7 +52,7 @@
             </ul>
           </li>
 
-<li class="nav-item dropdown" v-if="loggedIn">
+<li class="nav-item dropdown" v-if="loggedIn"> <!-- om user är inloggad så -->
               <a
                 class="nav-link dropdown"
                 href="#"
