@@ -22,7 +22,7 @@
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <h3 class="text-danger">{{ product.price }}:-</h3>
-                            <button class=" btn btn-primary" @click="addProductToCart({ product, quantity })" >Add to Cart</button> <!-- om vi hade haft +/-2:24 lektion 12-->
+                            <button class=" btn btn-primary btn-lg" @click="addProductToCart({ product, quantity })" >Add to Cart</button> <!-- om vi hade haft +/-2:24 lektion 12-->
                         </div>
                         
                     </div>
@@ -30,6 +30,12 @@
                 </div>
 
             </section>
+
+        <hr class="mt-5">
+        <div class="d-flex flex-row-reverse">
+                    <router-link to="/products" class="btn btn-light btn-sm text-warning"><i class="far fa-arrow-alt-circle-left me-3"></i>Back to products</router-link>
+
+        </div>
 
         </div>
 

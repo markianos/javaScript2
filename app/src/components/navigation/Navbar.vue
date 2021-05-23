@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
     <div class="container">
       <router-link class="navbar-brand" to="/">
         <i class="fab fa-digital-ocean me-2"></i>DigiWare
@@ -98,4 +98,7 @@ export default {
 .shopping-cart {
     min-width: 450px;
   }
+.bg-nav {
+  background-color: #232f3e;
+}
 </style>

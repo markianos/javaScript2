@@ -15,9 +15,9 @@
         <div class="total-price">
           Total: <span>{{ shoppingCartTotal }}:-</span>
         </div>
-          <small class="text-muted">inkl. moms</small>
+          <small class="text-muted">incl. VAT</small>
       </div>
-      <button class="btn btn-primary" @click.stop="">Gå till kassan</button>
+      <button class="btn btn-primary" @click.stop="">Proceed to checkout</button>
     </div>
 
 
